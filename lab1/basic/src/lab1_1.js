@@ -1,5 +1,4 @@
 function getMonth(number) {
-  number = Number(number)
   if (isNaN(number) || number < 1 || number > 12) {
     return 'Wrong number'
   } 
@@ -21,7 +20,6 @@ function getMonth(number) {
 }
 
 function getPrimes(number) {
-  number = Number(number)
   if (isNaN(number) || number < 0) {
     return 'Wrong number'
   }
@@ -37,7 +35,6 @@ function getPrimes(number) {
 let Counter = {
   count: 0,
   add: function(num) {
-    num = Number(num)
     if (isNaN(num)) {
       throw new Error("wrong number")
     }
@@ -45,7 +42,6 @@ let Counter = {
   },
 
   sub: function(num) {
-    num = Number(num)
     if (isNaN(num)) {
       throw new Error("wrong number")
     }
