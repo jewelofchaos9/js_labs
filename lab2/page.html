@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+  <title> Hello world! </title>
+  <script src="./src/images.js"></script>
+  <script src="./src/reload_counter.js"></script>
+  <script src="./src/ip_check.js"></script>
+  <script src="./src/oop.js"></script>
+</head>
+
+<html>
+  <body>
+
+    <div id="reloads">
+      <script>
+        const par = document.createElement("p")
+        const node = document.createTextNode("Number of your reloads: " + getNumberOfReloads())
+        par.appendChild(node)
+        var elem = document.getElementById("reloads")
+        elem.appendChild(par)
+      </script>
+    </div>
+
+    <div id="images_sync">
+      <button onclick="buttonImageSync()"> check image sync with waiting</button>
+      <button onclick="buttonImageSyncWithoutWait()"> check image sync without waiting</button>
+    </div>
+
+    <div id="ip_checker">
+      <button onclick="checkIpButton()">check list of ips</button>
+    </div>
+
+  </body>
+</html> 
