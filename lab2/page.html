@@ -2,6 +2,7 @@
 <head>
   <title> Hello world! </title>
   <script src="./src/images.js"></script>
+  <script src="./src/images_async.js"></script>
   <script src="./src/reload_counter.js"></script>
   <script src="./src/ip_check.js"></script>
   <script src="./src/oop.js"></script>
@@ -9,7 +10,6 @@
 
 <html>
   <body>
-
     <div id="reloads">
       <script>
         const par = document.createElement("p")
@@ -23,6 +23,11 @@
     <div id="images_sync">
       <button onclick="buttonImageSync()"> check image sync with waiting</button>
       <button onclick="buttonImageSyncWithoutWait()"> check image sync without waiting</button>
+    </div>
+
+    <div id="images_async">
+      <button onclick="buttonImage()"> check image sync with waiting</button>
+      <button onclick="buttonImageWithoutWait()"> check image sync without waiting</button>
     </div>
 
     <div id="ip_checker">

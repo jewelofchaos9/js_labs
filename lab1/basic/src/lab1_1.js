@@ -19,14 +19,47 @@ function getMonth(number) {
   }
 }
 
+function isPrime(num) {
+  if (num == 1) {
+    return false
+  }
+  divider_found = false
+  for(let i = 2; i <= Math.sqrt(num); i++) {
+    if(num % i == 0) {
+      return false
+    }
+  }
+  return true
+}
+
+function nextPrime(num) {
+  if (num % 2 == 0) {
+    num += 1
+  }
+  num += 2
+  while (true) {
+    if (isPrime(num)) {
+      break
+    }
+    num += 2
+  }
+  return num
+}
+
 function getPrimes(number) {
   if (isNaN(number) || number < 0) {
     return 'Wrong number'
   }
 
-  let primes = []
+  if (number == 0) {
+    return []
+  }
+
+  let primes = [2]
   while (primes.length < number) {
-    primes.push(2)
+    primes.push(
+      nextPrime(primes[primes.length - 1])
+    )
   }
 
   return primes.join(' ')
