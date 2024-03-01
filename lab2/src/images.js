@@ -38,18 +38,10 @@ function buttonImageSyncWithoutWait() {
     imgHref = prompt()
     promises.push(loadImageSync(imgHref))
   }
+
+  promises.forEach((promise) => promise.then(
+      function(result) { appendImage(result) },
+      function(error) { appendErrorMessage()}
+  ))
   
-  Promise.allSettled(promises).then(
-    function(result) { 
-      result.flatMap(x => {
-        if (x.status == 'fulfilled') {
-          console.log('kek')
-          appendImage(x.value)
-        } else {
-          appendErrorMessage()
-        }
-        console.log(x)
-      })
-    }, 
-  )
 }
