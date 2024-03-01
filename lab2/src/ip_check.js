@@ -19,6 +19,7 @@ function addWelcomeMessage() {
 
 async function isForbiddenIp(ip) {
   ipInfo = await fetch('https://json.geoiplookup.io/' + ip).then(x => x.json())
+  console.log(ipInfo)
   console.log(ipInfo.country_code) 
   return forbiddenCountryCodes.has(ipInfo.country_code)
 }
@@ -30,6 +31,5 @@ async function checkIpButton() {
       return addCountryForbiddenMessage()
     }
   }
-  
   return addWelcomeMessage()
 }
