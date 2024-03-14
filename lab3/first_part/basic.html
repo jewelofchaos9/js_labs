@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <title> Hello world! </title>
+  <link rel="stylesheet" href="calc_style.css">
+  <script src='./js/1984.js'></script>
+  <script src='./js/clicker.js'></script>
+  <script src='./js/calc.js'></script>
+</head>
+
+<html>
+  <body>
+    <div id="task1">
+      <h1> Добро пожаловать!</h1>
+      <span> <i>Приветствуем</i> <ins>вас</ins> <b>в нашем</b> <a href="example.com">магазине</a> </span> <br/>
+      <span>
+        &lt;h1&gt; 
+        Теорема Пифагора
+        &lt;/h1&gt; = a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
+      </span>
+
+      <table border="1">
+        <tr><td colspan="2">Информация</td></tr>
+        <tr>
+          <td>Старая цена: <del>1000</del> &#8381;</td>
+          <td>Новая цена: 500 &#8381; </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="clicker">
+      <button onclick="incrementClickCounter(); updateClickerStats()">Click me!</button>
+      <script> updateClickerStats() </script>
+    </div>
+
+    <div id="calc">
+      <div id="calc_expression"> </div>
+      <script> updateCalcExpression()</script>
+      <button onclick="addToCalcExpression('1')">1</button>
+      <button onclick="addToCalcExpression('2')">2</button>
+      <button onclick="addToCalcExpression('3')">3</button>
+      <button onclick="addToCalcExpression('+')">+</button>
+      <button onclick="addToCalcExpression('(')">(</button>
+      <br/>
+
+      <button onclick="addToCalcExpression('4')">4</button>
+      <button onclick="addToCalcExpression('5')">5</button>
+      <button onclick="addToCalcExpression('6')">6</button>
+      <button onclick="addToCalcExpression('-')">-</button>
+      <button onclick="addToCalcExpression(')')">)</button>
+      <br />
+      <button onclick="addToCalcExpression('7')">7</button>
+      <button onclick="addToCalcExpression('8')">8</button>
+      <button onclick="addToCalcExpression('9')">9</button>
+      <button onclick="addToCalcExpression('*')">*</button>
+      <button onclick="addToCalcExpression('%')">%</button>
+      <br />
+      <button onclick="clearCalcExpression()">&#10006;</button>
+      <button onclick="addToCalcExpression('0')">0</button>
+      <button onclick="popFromCalcExpression()">&#9003;</button>
+      <button onclick="addToCalcExpression('/')">/</button>
+      <button onclick="computeCalcExpression()">=</button>
+      <div id="calc_res"> </div>
+    </div>
+
+  </body>
+</html> 

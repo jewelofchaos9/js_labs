@@ -1,0 +1,27 @@
+div#following_circle{
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  background: blue;
+  position: fixed
+}
+
+/*div#menu{
+  position: fixed;
+  top: 0px;
+  background: orange;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+
+div#menu{
+  background-color: #eee;
+  position: fixed;
+  top: 0px;
+  width: 40%;
+  text-align: center;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, 0);
+}
