@@ -1,7 +1,7 @@
 div#following_circle{
   border-radius: 100%;
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   background: blue;
   position: fixed
 }
@@ -24,4 +24,13 @@ div#menu{
   left: 50%;
   padding: 20px;
   transform: translate(-50%, 0);
+}
+
+#task1 {
+  width: 100%;
+}
+
+#color_changing {
+  margin: 10px;
+  padding: 10px;
 }

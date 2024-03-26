@@ -21,6 +21,11 @@ function incrementClickCounter() {
     timeSpent = 1
   }
   
+  if (timeSpent > 60) {
+    localStorage.setItem('startTime', (new Date()).getTime())
+  }
+
+  
   localStorage.setItem('avgClicks', clickCounter/timeSpent)
 }
 

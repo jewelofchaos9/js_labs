@@ -49,7 +49,8 @@ function checkBrackets(bracketsString) {
   let state = true
   bracketsString.split("").forEach(function(elem, index, array) {
     if (!brackets.includes(elem)) {
-      state = false return
+      state = false 
+      return
     }
 
     if (elem == "(") {

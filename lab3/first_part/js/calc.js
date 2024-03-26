@@ -50,8 +50,8 @@ function computeCalcExpression() {
   if (expr == null || expr == "") {
     expr = "0"
   }
-  regexp = '/[1234567890+\-=/*%()]+/'
-  if (regexp.match(expr) == null) {
+  let regexp = "[0-9\+\-\=\*\(\)\%]+"
+  if (expr.match(regexp) == null) {
     return updateCalcResult("Strange expression")
   }
 

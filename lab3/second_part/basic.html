@@ -2,6 +2,7 @@
 <head>
   <title> Hello world! </title>
   <script src="./js/follower.js"></script>
+  <script src="./js/colorify.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -9,14 +10,25 @@
   <body>
     <div id="task1">
       <h1> Добро пожаловать!</h1>
-      <span> <i>Приветствуем</i> <ins>вас</ins> <b>в нашем</b> <a href="example.com">магазине</a> </span> <br/>
+        <div id="color_changing">
+          <i id="color_changing_italic">
+          </i>
+          
+          <ins id="color_changing_inserted">
+          </ins> 
+
+          <b id="color_changing_bold">
+          </b>
+
+          <a href="example.com">магазине</a> </span> <br/>
+        </div>
       <span>
-        &lt;h1&gt; 
+        &lt;h1&gt;
         Теорема Пифагора
         &lt;/h1&gt; = a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
       </span>
 
-      <table border="1">
+      <table border="1", style="background-color: cyan;">
         <tr><td colspan="2">Информация</td></tr>
         <tr>
           <td>Старая цена: <del>1000</del> &#8381;</td>
@@ -34,7 +46,44 @@
       <a href="#">О нас</a>
     </div>
 
-    <div>kek</div>
+    <script>
+      makeAlternatingColorText('color_changing_italic', 'Приветствуем')
+      makeAlternatingColorText('color_changing_inserted', 'Вас')
+      makeAlternatingColorText('color_changing_bold', 'в нашем')
+      
+    </script>
+
+    <div> <br/> <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a mollis velit, sodales maximus libero. Aenean iaculis felis in massa ultrices, et euismod nisl tincidunt. Aenean nec vestibulum odio. Donec justo lorem, vestibulum in ullamcorper a, fermentum sit amet mi. Praesent sed nibh tortor. Sed tempor consequat turpis, quis fringilla mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+Aenean maximus erat quis urna dignissim, et porttitor sapien bibendum. Vivamus lectus quam, lacinia vitae ipsum convallis, pulvinar sollicitudin lorem. Duis elementum lectus eu augue finibus dapibus. Quisque aliquet ipsum ornare nibh luctus, nec blandit nisi sollicitudin. Etiam sagittis cursus gravida. Phasellus a malesuada lectus. Aenean id orci ac ante vulputate porta. Quisque vestibulum sit amet libero ac iaculis. Integer porttitor mi vitae nunc rhoncus feugiat.
+
+Aliquam hendrerit efficitur vulputate. Suspendisse at lectus sed leo convallis rutrum sed eu mi. Mauris scelerisque lobortis placerat. Nunc mollis vestibulum urna a interdum. Phasellus euismod aliquam ligula ut mollis. Fusce ac purus bibendum, consequat enim vel, viverra diam. Fusce vitae tortor a augue tempor gravida. Integer tincidunt efficitur libero, nec volutpat diam ultricies nec. Donec mattis justo a metus lobortis accumsan vel imperdiet purus.
+
+Cras suscipit nisl eu pharetra pulvinar. Suspendisse potenti. Curabitur dictum nunc bibendum, sagittis justo sed, elementum leo. Donec auctor finibus odio egestas luctus. Morbi at elit vel sapien dictum mollis. Mauris cursus nisl et nibh gravida, a tristique purus rhoncus. Praesent sit amet ligula vel libero tincidunt blandit. Proin dui dui, pharetra vel arcu tincidunt, lobortis lacinia justo. Ut vel nisi sed felis pharetra ornare ut quis purus. Nunc pretium arcu at tortor blandit pretium. Integer porttitor, lorem eget mollis luctus, nisl sapien cursus turpis, id ornare sem dui vitae ipsum. Nulla ornare blandit malesuada.
+
+Nunc nisi quam, euismod et sodales eget, cursus quis nulla. Aenean dignissim ullamcorper diam, rhoncus euismod leo ornare a. Maecenas fringilla metus odio, eu maximus felis finibus ut. Sed elementum et magna ac scelerisque. Praesent quis lectus nisl. Donec laoreet neque eget odio pharetra, vel laoreet erat consequat. Nunc sit amet magna quam. Aenean odio enim, consectetur bibendum enim non, dictum rutrum orci. Aenean dapibus dolor et nulla ornare sodales.
+
+Donec nibh mauris, convallis eget interdum non, vestibulum id nisl. Curabitur faucibus enim velit. Morbi congue lorem id sodales tempus. Integer tortor nunc, tempor sit amet fermentum ac, sollicitudin sit amet neque. Sed non nunc nisl. Curabitur mi quam, suscipit nec scelerisque at, dictum et velit. Quisque tristique mollis mauris vitae venenatis. Nunc nec dignissim augue, in malesuada lacus. Aliquam eu efficitur elit, sed viverra est. Vestibulum tincidunt est vitae ornare malesuada. Nullam sollicitudin purus a diam rutrum malesuada. Sed eros nibh, mollis ac hendrerit et, scelerisque faucibus ex. Integer ante purus, porttitor in lectus eu, posuere pharetra arcu.
+
+Vivamus malesuada ipsum ex, non sollicitudin risus sagittis vel. Vivamus et mauris ut enim auctor ullamcorper. Mauris quis blandit elit. Ut faucibus ullamcorper orci, sed aliquam lacus bibendum et. Phasellus vel arcu dictum, faucibus velit in, luctus justo. In convallis ut urna eget mollis. Phasellus volutpat ligula in dui finibus pretium id vel mi. Phasellus euismod eget odio et euismod. Suspendisse tristique est vitae imperdiet fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce molestie aliquet malesuada. Fusce volutpat, diam ac rutrum luctus, urna metus pharetra nulla, quis volutpat odio ex sit amet dui. Donec at lectus a orci placerat pulvinar dignissim vitae velit.
+
+Fusce nec dui turpis. Sed vitae venenatis purus. Nulla dui arcu, sollicitudin mollis arcu ut, tincidunt mollis ipsum. Mauris sit amet felis id eros imperdiet maximus. In feugiat, dui vel imperdiet rhoncus, lacus lorem consectetur arcu, a placerat quam ipsum et arcu. Nullam convallis rutrum turpis, at suscipit quam faucibus id. Suspendisse neque erat, placerat nec malesuada nec, dictum sed metus.
+
+Etiam ac egestas enim. Nunc in urna ut felis euismod gravida eu nec lacus. Phasellus eu metus mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus suscipit massa turpis, at blandit sapien ornare eu. Nam nec congue lorem. Etiam vel viverra nisi. Suspendisse potenti. Vivamus eget tristique purus. Aliquam sed elit eros. In eros ipsum, tristique eu dolor nec, bibendum accumsan mauris. Vivamus venenatis et ipsum ut viverra. Phasellus et magna fringilla, porttitor tortor in, luctus tortor. Vivamus et efficitur erat. Vestibulum imperdiet hendrerit diam in laoreet.
+
+Sed egestas finibus ex, vel scelerisque purus rutrum non. Cras cursus dignissim libero, sed pharetra tellus aliquam id. Pellentesque orci ipsum, fermentum varius convallis vel, viverra id nunc. Fusce convallis quam nec sodales dignissim. Vivamus ac suscipit sem, vel posuere augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc euismod convallis lorem, quis gravida orci maximus sed. Praesent ac tincidunt metus. Phasellus dapibus volutpat nibh, pretium gravida magna ultrices et. Sed convallis sodales varius. Duis a orci a tortor pellentesque porta. Etiam tempor, felis at tempor tincidunt, leo urna dapibus lorem, vel varius est est vel lorem. Suspendisse molestie rutrum porttitor. Donec augue elit, vehicula eget diam ac, aliquam vestibulum elit. Sed blandit dui et tristique vehicula.
+
+Cras ac justo gravida, elementum metus in, ornare neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean nec tortor vehicula, ornare tellus ultrices, laoreet lectus. Suspendisse tristique varius eros, vel consectetur libero viverra ac. Pellentesque finibus ligula sollicitudin nisi sollicitudin rutrum. Ut imperdiet tincidunt nisi id luctus. Praesent finibus volutpat diam, pharetra convallis erat auctor eu. Etiam congue est venenatis justo sodales rhoncus. Duis viverra ornare diam, tincidunt dictum sem imperdiet et. Aliquam pulvinar neque vitae risus aliquam sagittis. Nulla id volutpat lorem. Sed imperdiet sollicitudin blandit.
+
+In in ligula consequat, pretium lectus sed, ultricies justo. Etiam in erat sed risus ullamcorper blandit ac a odio. Donec non volutpat tellus. Suspendisse tellus felis, suscipit nec elementum eget, lobortis et ante. Aliquam ultricies consectetur risus ut feugiat. Donec sollicitudin, mauris non lacinia aliquam, mi nibh commodo diam, a feugiat diam nisi eu nisl. Phasellus vel mi sapien. Nulla auctor metus a tortor tempus tincidunt. Morbi lobortis aliquam est, ut fermentum ligula.
+
+Quisque posuere arcu eu eros gravida, facilisis tincidunt nibh viverra. Sed a tellus sed libero bibendum lobortis. Suspendisse gravida viverra nisl quis aliquam. Sed vitae accumsan quam, mattis eleifend ligula. Etiam vitae imperdiet ante. Integer in tempor ex. Donec non lorem semper, tempor est eu, malesuada lorem. In nec porttitor tellus, sed facilisis urna. Curabitur pulvinar quam sed odio venenatis, vel congue enim tincidunt. In sed libero erat. Sed ex magna, rutrum et mattis in, elementum vel purus. Proin sit amet leo sed enim dignissim porta eu nec turpis. Sed faucibus commodo massa sit amet suscipit.
+
+Sed tempor fermentum arcu ut tincidunt. Cras sit amet est ut ipsum suscipit faucibus vel sed lorem. Fusce placerat eleifend bibendum. Donec non luctus metus, eu porta ante. Etiam vel est a nisi aliquam commodo. Proin eu ultrices dui. Donec et accumsan massa. Mauris id felis a urna luctus pharetra. Etiam et quam vel justo scelerisque cursus a quis justo. Mauris ullamcorper turpis augue, non aliquam sapien convallis ac. Pellentesque luctus diam pharetra quam varius, vitae tempus lectus hendrerit. Ut ullamcorper sollicitudin sem vel dignissim. Donec mauris odio, ultricies non fringilla et, lobortis nec elit. Vestibulum ac ipsum facilisis enim blandit ornare.
+
+Phasellus efficitur turpis elit, in maximus purus imperdiet sed. Maecenas id nisi volutpat, semper sapien non, sodales neque. Nulla non vulputate ex. Suspendisse potenti. Morbi nec nibh in ante accumsan tristique. Nam placerat turpis et tellus hendrerit semper. Donec bibendum venenatis mattis. Nullam facilisis nec sem a convallis.
+
+In non justo nec sem viverra venenatis. Suspendisse sed massa at purus porttitor faucibus bibendum id ligula. Ut tristique, velit a porta rutrum, quam dui ultrices mauris, tincidunt convallis eros nibh sed mi. Sed vel viverra nisi. Integer maximus dolor nulla, sed tincidunt turpis vestibulum eu. Suspendisse suscipit commodo lacus, ut ornare dui venenatis eget. Pellentesque congue feugiat augue, elementum gravida est porta at. Nam facilisis est sed auctor gravida. Morbi suscipit mauris elit, ut porttitor eros viverra a. Integer congue blandit metus, id lacinia neque tincidunt sit amet. Curabitur pellentesque porttitor arcu in aliquet. Nullam convallis fermentum malesuada. Cras eget fringilla nulla, ut gravida tellus. </div>
 
   </body>
 </html> 

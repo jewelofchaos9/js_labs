@@ -7,20 +7,21 @@ function appendErrorMessage() {
   div.appendChild(p)
 } 
 
-async function loadImageSync(imageHref) {
-  let img = new Image()
-  img.src = imageHref
-  img.onerror = () => return new Error("Cannot load image")
-
-  return img
+function loadImageSync(imageHref) {
+  return new Promise(function(resolve, reject) {
+    let img = new Image()
+    img.src = imageHref
+    img.onload = () => resolve(img)
+    img.onerror = () => reject(new Error("Cannot load image"))
+  })
 }
 
-function appendImage(image) {
+async function appendImage(image) {
   const div = document.getElementById("images_async")
   div.appendChild(image)
 }
 
-function buttonImage() {
+async function buttonImage() {
   for(i = 0; i < 5; i++) {
     imgHref = prompt()
     loadImageSync(imgHref).then(
@@ -30,17 +31,24 @@ function buttonImage() {
   }
 }
 
-function buttonImageWithoutWait() {
-  promises = []
+async function buttonImageWithoutWait() {
+  hrefs = []
   picturesCount = 5
   for(i = 0; i < picturesCount; i++) {
     imgHref = prompt()
-    promises.push(loadImageSync(imgHref))
+    hrefs.push(imgHref)
   }
 
-  promises.forEach((promise) => promise.then(
-      function(result) { appendImage(result) },
-      function(error) { appendErrorMessage()}
-  ))
-  
+  hrefs.forEach(async (href) => 
+    {
+      try {
+        let im = await loadImageSync(href)
+        appendImage(im)
+        console.log(im)
+      } catch(e) {
+        appendErrorMessage()
+        console.log(e)
+      }
+    }
+  )
 }

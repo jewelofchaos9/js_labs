@@ -53,6 +53,11 @@ class Student extends User {
   constructor(name) {
     super(name)
   }
+
+  function hello() {
+    return "kek"
+  }
+
   get age() {
     return this.#age
   }
