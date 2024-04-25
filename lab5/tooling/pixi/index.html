@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>pixijs</title>
+</head>
+
+<body>
+  <script src="node_modules/pixi.js/dist/pixi.js"></script>
+  <script type="module">
+    const app = new PIXI.Application();
+    await app.init({ width: 640, height: 640});
+    document.body.appendChild(app.canvas);
+
+    const rectangle = new PIXI.Graphics();
+    rectangle.beginFill(0xFF0000);
+    rectangle.drawRect(0, 0, 100, 200);
+    rectangle.endFill();
+    rectangle.x = 300;
+    rectangle.y = 300;
+
+    app.stage.addChild(rectangle);
+
+    app.ticker.add(() => {
+      rectangle.rotation += 0.01;
+    });
+  </script>
+</body>
+
+</html>

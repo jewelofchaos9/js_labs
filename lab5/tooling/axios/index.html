@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Axios</title>
+</head>
+
+<body>
+  <script src="./node_modules/axios/dist/axios.js"></script>
+  <script>
+    axios.get('https://vk.com')
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('There has been a problem with your axios operation:', error);
+    });
+    axios.get('https://json.geoiplookup.io/')
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('There has been a problem with your axios operation:', error);
+    });
+  </script>
+</body>
+</html>
