@@ -1,59 +1,49 @@
 <script setup>
+import { ref } from 'vue'
+const prop = defineProps(['open'])
+const open = ref(false);
+const emit = defineEmits(['confirmed'])
 
-const isVisible = ref(false)
-
-const open = () => {
-  isVisible.value = true;
+const confirm = () => {
+  open.value = false;
+  emit('confirmed', 1)
 }
 
-const close = () => {
-  isVisible.value = false;
+const discomfirm = () => {
+  open.value = false;
+  emit('confirmed', 0)
 }
-
 </script>
 
 <template>
-    <transition name="fade">
-        <div class="popup-modal" v-if="isVisible.value">
-            <div class="window">
-                <slot></slot>
-            </div>
-        </div>
-    </transition>
+  <button @click="open = true"> <slot name='button'/> </button>
+
+  <Teleport to="body">
+    <div v-if="open" class="modal">
+      <slot name="confirmation"/>
+      <button @click="discomfirm()">Close</button>
+      <button @click="confirm()">Confirm</button>
+    </div>
+  </Teleport>
+
 </template>
 
-
-<style scoped>
-/* css class for the transition */
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.3s;
-}
-.fade-enter,
-.fade-leave-to {
-    opacity: 0;
-}
-
-.popup-modal {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    z-index: 1;
+<style scoped> 
+.modal {
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: var(--color-background-mute);
 }
 
-.window {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1rem;
+button {
+  height: 30px;
+  background-color: transparent;
+  border: 0px;
+  color: var(--color-text);
 }
 </style>

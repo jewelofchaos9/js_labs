@@ -1,5 +1,7 @@
 <script setup>
   import {ref} from 'vue'
+  import Popup from './Popup.vue'
+
   const prop = defineProps(['task_name', 'task_deadline', 'task_type', 'task_id', 'task_description', 'task_done'])
   const emit = defineEmits(['deleteTask', 'taskRedone'])
   const taskDone = ref(prop.task_done);
@@ -41,8 +43,22 @@
     </div>
 
     <div class="interact_buttons">
-      <button v-on:click="redoTask"><img src="../assets/check-mark.png"></button>
-      <button v-on:click="destruct"><img src="../assets/trash-bin.png"></button>
+      <Popup @confirmed="(conf) => {if (conf) {redoTask()} }">
+        <template v-slot:button>
+          <button><img src="../assets/check-mark.png"></button>
+        </template>
+        <template v-slot:confirmation>
+          <p> Are you sure you want to redo task? </p>
+        </template>
+      </Popup>
+      <Popup @confirmed="(conf) => {if (conf) {destruct()}}">
+        <template v-slot:button>
+          <button><img src="../assets/trash-bin.png"></button>
+        </template>
+        <template v-slot:confirmation>
+          <p> Are you sure you want to delete task? </p>
+        </template>
+      </Popup>
     </div>
 
   </div>

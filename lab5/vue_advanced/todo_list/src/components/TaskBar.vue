@@ -4,7 +4,7 @@ import axios from 'axios';
 import Task from './Task.vue'
 import TaskAdder from './TaskAdder.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
-import Confirmation from './Confirmation.vue'
+import Popup from './Popup.vue'
 </script>
 
 <script>
@@ -69,21 +69,23 @@ const redoTask = async (id) => {
 </script>
 
 <template>
-  <TaskAdder @addTask="(task) => appendTask(task)"/>
-  <Task :task_name="task.task_name" 
-    :task_deadline="task.task_deadline" 
-    :task_type="task.task_type"
-    :task_id="task.task_id"
-    :task_description="task.task_description"
-    :task_done="task.task_done"
-    @deleteTask="(id) => destruct(id)"
-    @taskRedone="(id) => redoTask(id)"
-    v-for="task in tasks"
-  >
-      <template #icon>
-        <CommunityIcon />
-      </template>
-  </Task>
+  <div class="tasks">
+    <TaskAdder @addTask="(task) => appendTask(task)"/>
+    <Task :task_name="task.task_name" 
+      :task_deadline="task.task_deadline" 
+      :task_type="task.task_type"
+      :task_id="task.task_id"
+      :task_description="task.task_description"
+      :task_done="task.task_done"
+      @deleteTask="(id) => destruct(id)"
+      @taskRedone="(id) => redoTask(id)"
+      v-for="task in tasks"
+    >
+        <template #icon>
+          <CommunityIcon />
+        </template>
+    </Task>
+  </div>
 
 </template>
 

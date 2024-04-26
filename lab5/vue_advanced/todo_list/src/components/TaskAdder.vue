@@ -32,7 +32,7 @@ const parseTask = () => {
 }
 
 input {
-  color: white;
+  color: var(--color-text);
   height: 30px;
   background-color: transparent;
   border: 1px solid var(--color-border);
